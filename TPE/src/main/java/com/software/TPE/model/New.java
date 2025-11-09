@@ -11,5 +11,7 @@ public class New {
     private String id;
     private String title;
     private String content;
+    private Boolean state;
     private String imagenUrl;
+
 }
