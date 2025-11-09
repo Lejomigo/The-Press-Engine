@@ -1,26 +1,26 @@
 package com.software.TPE.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDateTime;
+import java.util.UUID;
+
+@Document(collection = "users")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class User {
-    @Getter
-    @Setter
-    private int id;
-    private String email;
+
+    @Id
+    private String id = UUID.randomUUID().toString();
     private String name;
+    private String email;
     private String password;
-    private String type;
-
-
-    public User(int id, String email, String name, String password, String type) {
-        this.id = id;
-        this.email = email;
-        this.name = name;
-        this.password = password;
-        this.type = type;
-    }
-
+    private String role; // ADMIN, WRITER, READER
+    private LocalDateTime createdAt;
 
 }
+
