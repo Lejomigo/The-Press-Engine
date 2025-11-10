@@ -19,7 +19,12 @@ public class Post {
     private String title;
     private String content;
     private String authorId;
+    private String authorName;
+    private String category;
     private String status; // PENDING, APPROVED, REJECTED
+    private String imageUrl;
+    private String feedback;
+    private String deleteReason; // Razón de eliminación
     private LocalDateTime createdAt = LocalDateTime.now();
     private LocalDateTime updatedAt = LocalDateTime.now();
 }
